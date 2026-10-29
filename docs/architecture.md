@@ -5,10 +5,14 @@
 ```
 ekspor chat relay (TXT)      arsip terbit (DOCX + TXT)
         |                            |
-        |  mjs-ingest whatsapp        |
+        |  mjs-ingest analyse         |  mjs-ingest parse
         v                            v
-  rekap kegiatan sipil          SITREP JSON
+  analysis.json                 SITREP JSON
+  (rekap, titik, pola,
+   laporan lapangan)
 ```
+
+Modul yang menyusunnya: `whatsapp` membaca ekspor, `places` menyeragamkan titik, `patterns` menghitung pola, `incidents` mendeteksi laporan keadaan dan memasangkannya dengan rencana, dan `analysis` merangkai keempatnya menjadi satu berkas.
 
 ```
 arsip terbit (DOCX + TXT)
@@ -52,4 +56,6 @@ Rata-rata berbobot dapat meredam satu pilar ekstrem sampai menyesatkan. Pilar cu
 - Peta zona sebagai geografi. Regional risk map masih berupa tabel terurut.
 - Bobot komposit masih provisional; lihat `docs/doctrine/msrm-v1.1.md`.
 - Penggabungan otomatis potongan rekap relay ke dalam SITREP utuh. Saat ini `--fragment-for` mengeluarkan potongan, dan analis yang menempatkannya bersama skor pilar.
+- Koordinat pada `data/gazetteer.json` masih kosong seluruhnya, sehingga peta sebaran belum menempatkan titik. Peringkat titik rawan sudah berjalan tanpa koordinat.
+- Pengambilan nama ruas jalan dari narasi bersifat indikatif. Kapitalisasi pada laporan lapangan tidak konsisten, dan sebagian nama masih membawa keterangan arah.
 - Rekap relay belum mengenali seluruh ragam penulisan. Sebagian kecil rekaman masih membawa pelaksana yang terbaca dari baris penutup laporan; rekaman seperti itu perlu ditinjau analis sebelum terbit.

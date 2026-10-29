@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from . import archive, whatsapp
+from . import analysis, archive, places, whatsapp
 from .parse_docx import DocxSupportMissing, parse
 from .validate import Finding, errors, validate
 
@@ -61,6 +61,26 @@ def main(argv: list[str] | None = None) -> int:
         "diidentifikasi; keluaran tidak boleh masuk repositori publik",
     )
 
+    p_an = sub.add_parser(
+        "analyse",
+        help="rangkai rekap, peringkat titik, pola, dan laporan lapangan",
+    )
+    p_an.add_argument("path", type=Path, help="berkas .txt hasil ekspor chat")
+    p_an.add_argument("--publisher", default="Grup relay WhatsApp")
+    p_an.add_argument(
+        "--gazetteer",
+        type=Path,
+        default=Path("data/gazetteer.json"),
+        help="berkas koordinat titik; entri tanpa koordinat tetap diperingkat",
+    )
+    p_an.add_argument(
+        "--update-gazetteer",
+        action="store_true",
+        help="tambahkan titik baru ke gazetteer tanpa menyentuh koordinat yang ada",
+    )
+    p_an.add_argument("-o", "--output", type=Path)
+    p_an.add_argument("--include-pii", action="store_true")
+
     args = parser.parse_args(argv)
 
     if args.command == "validate":
@@ -71,6 +91,8 @@ def main(argv: list[str] | None = None) -> int:
         return _cmd_parse(args.path)
     if args.command == "whatsapp":
         return _cmd_whatsapp(args)
+    if args.command == "analyse":
+        return _cmd_analyse(args)
     return 2
 
 
@@ -201,6 +223,55 @@ def _cmd_whatsapp(args: Any) -> int:
     print(
         f"{len(extraction.actions)} rekam terbaca, "
         f"{len(extraction.skipped)} baris dilewati",
+        file=sys.stderr,
+    )
+    return 0
+
+
+def _cmd_analyse(args: Any) -> int:
+    try:
+        text = args.path.read_text(encoding="utf-8")
+    except OSError as exc:
+        print(f"gagal membaca {args.path}: {exc}", file=sys.stderr)
+        return 2
+
+    messages = whatsapp.parse_messages(text)
+    extraction = whatsapp.extract(messages)
+    gazetteer = places.load_gazetteer(args.gazetteer)
+
+    payload = analysis.build(
+        extraction,
+        messages,
+        gazetteer,
+        publisher=args.publisher,
+        include_pii=args.include_pii,
+    )
+
+    body = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+    if args.output:
+        args.output.write_text(body, encoding="utf-8")
+        print(f"ditulis ke {args.output}", file=sys.stderr)
+    else:
+        sys.stdout.write(body)
+
+    if args.update_gazetteer:
+        ranked = [
+            places.PointStat(**{k: v for k, v in row.items() if k != "recurring"})
+            for row in payload["points"]["ranked"]
+        ]
+        merged, added = places.merge_gazetteer(gazetteer, ranked)
+        args.gazetteer.parent.mkdir(parents=True, exist_ok=True)
+        args.gazetteer.write_text(places.gazetteer_json(merged), encoding="utf-8")
+        print(
+            f"gazetteer {args.gazetteer}: {added} titik baru, "
+            f"{len(merged)} total",
+            file=sys.stderr,
+        )
+
+    cov = payload["points"]["coverage"]
+    print(
+        f"{cov['points']} titik, {cov['points_located']} berkoordinat; "
+        f"{cov['actions_located']}/{cov['actions']} aksi dapat dipetakan",
         file=sys.stderr,
     )
     return 0

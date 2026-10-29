@@ -43,3 +43,27 @@ Aturan yang berlaku:
 3. **Keluaran yang memuat nama tidak boleh masuk repositori atau saluran terbuka.** Repositori ini publik; seluruh isi `data/sitreps/` karena itu tidak masuk version control.
 
 Daftar nama penyelenggara aksi beserta jadwalnya, bila tersebar, membahayakan orang per orang. Penyuntingan bawaan menjadikan penyertaan nama sebagai keputusan sadar, bukan keadaan yang terjadi karena tidak ada yang memikirkannya.
+
+## Rencana dan kejadian
+
+Rekap menyatakan apa yang direncanakan. Pesan susulan melaporkan apa yang terpantau: massa tiba, massa membubarkan diri, akses ditutup atau dibuka, situasi dinyatakan aman. Keduanya dipetakan berdasarkan kesamaan tanggal dan titik.
+
+Batas yang mengikat: **tidak adanya laporan lapangan bukan bukti tidak terjadinya kegiatan.**
+
+Grup relay melaporkan sebagian kecil kegiatan saja. Pada satu berkas uji, 287 rencana hanya disertai 60 laporan keadaan, dan hanya 4 rencana memiliki laporan yang menyebut titiknya. Angka itu menunjukkan kepadatan pelaporan, bukan tingkat pelaksanaan.
+
+Istilah "tingkat realisasi" karena itu tidak dipakai, dan bidang keluaran dinamai `plans_with_field_report` serta `plans_without_field_report`. Menyebutnya "terlaksana" dan "batal" akan mengubah ketiadaan pengamatan menjadi temuan, dan pembaca akan menyimpulkan 283 aksi tidak terjadi padahal yang benar adalah tidak ada yang melaporkannya.
+
+## Koordinat dan gazetteer
+
+Peta sebaran titik hanya menempatkan titik yang berkoordinat. Koordinat disimpan pada `data/gazetteer.json` bersama `source` yang menyebut asalnya dan `verified_at`.
+
+Aturannya: **koordinat tanpa sumber tidak dicatat.** Koordinat yang ditulis dari ingatan terlihat persis seperti koordinat yang benar, dan pembaca yang memakai halaman ini untuk rencana lalu lintas akan diarahkan ke tempat yang salah. Entri tanpa koordinat tetap muncul pada peringkat titik rawan; yang tidak dapat dilakukan tanpa koordinat hanyalah penempatan pada peta.
+
+Penambahan titik baru ke gazetteer tidak pernah menimpa koordinat yang sudah diisi.
+
+## Jenis kegiatan pada format bernomor
+
+Judul pesan berlaku untuk rekap wilayahnya, bukan untuk setiap baris di dalamnya. Butir yang tidak berada di bawah judul kecamatan dan tidak membawa tuntutan tidak dinyatakan unjuk rasa walau judul pesan menyebut unras.
+
+Kalimat pembuka dan penutup laporan — "Demikian dilaporkan", "Izin melaporkan", "Terima kasih" — disaring sebelum baris dibaca sebagai nama pelaksana. Tanpa penyaringan itu, satu laporan uji melahirkan aksi berisi 1.200 orang dengan pelaksana "Demikian dilaporkan".

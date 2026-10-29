@@ -160,3 +160,106 @@ export interface CivilActionDigest {
   actions: CivilAction[];
   skipped?: string[];
 }
+
+/** Satu titik pada peringkat titik aksi. */
+export interface PointStat {
+  key: string;
+  label: string;
+  actions: number;
+  crowd_reported: number;
+  dates: string[];
+  located: boolean;
+  lat: number | null;
+  lon: number | null;
+}
+
+export interface DateRow {
+  date: string;
+  actions: number;
+  crowd_reported: number;
+  weekday: string | null;
+}
+
+export interface HourRow {
+  hour: number;
+  actions: number;
+}
+
+export interface WeekdayRow {
+  weekday: string;
+  actions: number;
+  days_observed: number;
+}
+
+export interface OrganizerRow {
+  organizer: string;
+  actions: number;
+  days: number;
+}
+
+export interface ConcurrencyRow {
+  activity_date: string;
+  time_start: string;
+  point_key: string;
+  label: string;
+  groups: number;
+  crowd_reported: number;
+  organizers: string[];
+}
+
+export interface FieldReportRow {
+  reported_on: string;
+  reported_time: string | null;
+  point_keys: string[];
+  signals: string[];
+  roads: string[];
+  excerpt: string;
+  sender_token: string;
+}
+
+/**
+ * Berkas analisis, keluaran `mjs-ingest analyse`.
+ *
+ * Seluruh isinya hitungan atas laporan. Tidak ada skor risiko di dalamnya.
+ */
+export interface Analysis extends CivilActionDigest {
+  points: {
+    coverage: {
+      points: number;
+      points_located: number;
+      actions: number;
+      actions_located: number;
+    };
+    ranked: PointStat[];
+  };
+  patterns: {
+    by_date: DateRow[];
+    by_hour: HourRow[];
+    by_weekday: WeekdayRow[];
+    recurring_organizers: OrganizerRow[];
+    concurrency: ConcurrencyRow[];
+  };
+  field_reports: {
+    observation: {
+      plans: number;
+      plans_with_field_report: number;
+      plans_without_field_report: number;
+      note: string;
+    };
+    reports: FieldReportRow[];
+    matched_plans: {
+      activity_date: string | null;
+      time_start: string | null;
+      location: string | null;
+      organizer: string | null;
+      point_key: string | null;
+      report_count: number;
+      signals: string[];
+    }[];
+  };
+  totals: {
+    messages: number;
+    actions_all_kinds: number;
+    plans_analysed: number;
+  };
+}

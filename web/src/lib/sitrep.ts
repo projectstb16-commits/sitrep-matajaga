@@ -1,7 +1,12 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
-import type { ArchiveIndex, CivilActionDigest, Sitrep } from "@/types/sitrep";
+import type {
+  Analysis,
+  ArchiveIndex,
+  CivilActionDigest,
+  Sitrep,
+} from "@/types/sitrep";
 
 /**
  * Pembacaan SITREP dari arsip.
@@ -89,6 +94,16 @@ export async function readDigest(): Promise<CivilActionDigest | null> {
       "utf8",
     );
     return JSON.parse(raw) as CivilActionDigest;
+  } catch {
+    return null;
+  }
+}
+
+/** Baca berkas analisis bila `mjs-ingest analyse` sudah dijalankan. */
+export async function readAnalysis(): Promise<Analysis | null> {
+  try {
+    const raw = await readFile(path.join(ARCHIVE_DIR, "analysis.json"), "utf8");
+    return JSON.parse(raw) as Analysis;
   } catch {
     return null;
   }

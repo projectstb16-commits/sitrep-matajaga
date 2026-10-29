@@ -1,0 +1,1382 @@
+{
+  "note": "Koordinat diisi dari sumber yang disebut pada 'source'. Entri tanpa koordinat tidak ditempatkan pada peta dan tetap muncul pada peringkat titik rawan.",
+  "places": [
+    {
+      "key": "1. pukul 10.00 wib giat aksi unras oleh garda mahaiswa peduli rakyat di polres metro",
+      "label": "1. Pukul 10.00 Wib Giat Aksi Unras Oleh Garda Mahaiswa Peduli Rakyat Di Polres Metro",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "3. pukul 10.00 wib giat aksi unras oleh aliansi masyarakat waras hukum di bnpb ri",
+      "label": "3. Pukul 10.00 Wib Giat Aksi Unras Oleh Aliansi Masyarakat Waras Hukum Di Bnpb RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "4. pukul 12.00 wib giat tikpul aksi unras oleh keluarga besar mahasiswa unindra menuju silang selatan monas",
+      "label": "4. Pukul 12.00 Wib Giat Tikpul Aksi Unras Oleh Keluarga Besar Mahasiswa Unindra Menuju Silang Selatan Monas",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "baharkam polri",
+      "label": "Baharkam Polri",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "balai kota dki",
+      "label": "Balai Kota DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "balaikota dki",
+      "label": "Balaikota DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "balaikota dki gambir warga bersatu kl. 100 org",
+      "label": "Balaikota DKI Gambir Warga Bersatu Kl. 100 Org",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "baleku massage",
+      "label": "Baleku Massage",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "bank btn menara ii",
+      "label": "Bank BTN Menara Ii",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "batu karang group",
+      "label": "Batu Karang Group",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "bkn ri",
+      "label": "Bkn RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "bni cabang tebet",
+      "label": "BNI Cabang Tebet",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "bph migas",
+      "label": "Bph Migas",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "cabang bank bjb kota timur kota",
+      "label": "Cabang Bank Bjb Kota Timur Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "cheese massage spa bsd ruko golden boulevard blok c no. 8 lengkong karya kecamatan serpong utara selatan",
+      "label": "Cheese Massage Spa Bsd Ruko Golden Boulevard Blok C No. 8 Lengkong Karya Kecamatan Serpong Utara Selatan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dinas perhubungan kota medan satria kota",
+      "label": "Dinas Perhubungan Kota Medan Satria Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dispora dki",
+      "label": "Dispora DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "ditjen bea",
+      "label": "Ditjen Bea",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "ditjen gakkum kementerian esdm",
+      "label": "Ditjen Gakkum Kementerian ESDM",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpmptsp",
+      "label": "Dpmptsp",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpp partai gerindra",
+      "label": "Dpp Partai Gerindra",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpp partai nasdem",
+      "label": "Dpp Partai Nasdem",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpp pdip",
+      "label": "Dpp Pdip",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpp pkb",
+      "label": "Dpp Pkb",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpp pks",
+      "label": "Dpp Pks",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dpr mpr ri",
+      "label": "DPR MPR RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "dprd dki",
+      "label": "DPRD DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "giat aksi unras oleh aliansi masyarakat peduli guru di dispora dki",
+      "label": "Giat Aksi Unras Oleh Aliansi Masyarakat Peduli Guru Di Dispora DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "giat aksi unras oleh dpp garansi",
+      "label": "Giat Aksi Unras Oleh Dpp Garansi",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "giat tikpul keberangkatan massa aksi dari bem unj green force aliansi unj melawan",
+      "label": "Giat Tikpul Keberangkatan Massa Aksi Dari Bem UNJ Green Force Aliansi UNJ Melawan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "giat tikpul keberangkatan massa aksi dari koalisi ojek nasional kon di sekretariat dpp kon rt.2",
+      "label": "Giat Tikpul Keberangkatan Massa Aksi Dari Koalisi Ojek Nasional Kon Di Sekretariat Dpp Kon Rt.2",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "hi menteng",
+      "label": "Hi Menteng",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "hotel aston jatiuwung kota",
+      "label": "Hotel Aston Jatiuwung Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "hotel jhl solitaire gading serpong selatan",
+      "label": "Hotel Jhl Solitaire Gading Serpong Selatan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "http",
+      "label": "Http",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "ikatan mahasiswa flores serikat mahasiswa untuk demokrasi",
+      "label": "Ikatan Mahasiswa Flores Serikat Mahasiswa Untuk Demokrasi",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "imigrasi",
+      "label": "Imigrasi",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kampus uki",
+      "label": "Kampus Uki",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kedubes jerman",
+      "label": "Kedubes Jerman",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kedubes malaysia",
+      "label": "Kedubes Malaysia",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kedubes rrt",
+      "label": "Kedubes RRT",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kedutaan besar amerika serikat",
+      "label": "Kedutaan Besar Amerika Serikat",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kedutaan besar republik rakyat tiongkok",
+      "label": "Kedutaan Besar Republik Rakyat Tiongkok",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kejagung ri",
+      "label": "Kejagung RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kejaksaan agung ri",
+      "label": "Kejaksaan Agung RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kejaksaan negeri kota kecamatan cilodong kota",
+      "label": "Kejaksaan Negeri Kota Kecamatan Cilodong Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kejati dki",
+      "label": "Kejati DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kemen imipas ri",
+      "label": "Kemen Imipas RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kemen p2mi ri",
+      "label": "Kemen P2mi RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kemen pu ri",
+      "label": "Kemen Pu RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kemenaker ri",
+      "label": "Kemenaker RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kemenhaj ri",
+      "label": "Kemenhaj RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kemenhut ri",
+      "label": "Kemenhut RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian agama",
+      "label": "Kementerian Agama",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian agama kota kota",
+      "label": "Kementerian Agama Kota Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian atr",
+      "label": "Kementerian ATR",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian dikdasmen",
+      "label": "Kementerian Dikdasmen",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian dikti saintek",
+      "label": "Kementerian Dikti Saintek",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian esdm",
+      "label": "Kementerian ESDM",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian esdm ri",
+      "label": "Kementerian ESDM RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian haji",
+      "label": "Kementerian Haji",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian kehutanan ri",
+      "label": "Kementerian Kehutanan RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian kesehatan",
+      "label": "Kementerian Kesehatan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian kesehatan ri",
+      "label": "Kementerian Kesehatan RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian ketenagakerjaan ri",
+      "label": "Kementerian Ketenagakerjaan RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kementerian lingkungan hidup",
+      "label": "Kementerian Lingkungan Hidup",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "komnas ham ri",
+      "label": "KOMNAS HAM RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kpk ri",
+      "label": "KPK RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "kpu ri",
+      "label": "KPU RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "lpei",
+      "label": "Lpei",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "malam belas kasih",
+      "label": "Malam Belas Kasih",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "mapolres metro kebayoran baru",
+      "label": "Mapolres Metro Kebayoran Baru",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "metallurgical corporation of china limited mcc treasury tower scbd kebayoran baru",
+      "label": "Metallurgical Corporation Of China Limited Mcc Treasury Tower SCBD Kebayoran Baru",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "ojk ri",
+      "label": "OJK RI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "operasional maxim",
+      "label": "Operasional Maxim",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "orchid spa bsd serpong selatan",
+      "label": "Orchid Spa Bsd Serpong Selatan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pemkot selatan kota",
+      "label": "Pemkot Selatan Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pengadilan negeri kecamatan cakung",
+      "label": "Pengadilan Negeri Kecamatan Cakung",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pergudangan taman tekno blok k3 no. 22 setu kota selatan",
+      "label": "Pergudangan Taman Tekno Blok K3 No. 22 Setu Kota Selatan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "perkantoran pemda kab. ds. sukamahi pusat kab",
+      "label": "Perkantoran Pemda Kab. Ds. Sukamahi Pusat Kab",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "persimpangan salemba raya st carolus",
+      "label": "Persimpangan Salemba Raya St Carolus",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pertunjukan seni",
+      "label": "Pertunjukan Seni",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pintu gerbang tpst bantargebang kota",
+      "label": "Pintu Gerbang Tpst Bantargebang Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "polda metro jaya",
+      "label": "Polda Metro Jaya",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "polres metro",
+      "label": "Polres Metro",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt asuransi allianz life indonesia",
+      "label": "PT Asuransi Allianz Life Indonesia",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt bumi agro makmur",
+      "label": "PT Bumi Agro Makmur",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt jasindo",
+      "label": "PT Jasindo",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt panca kraft pratama kecamatan karawaci kota",
+      "label": "PT Panca Kraft Pratama Kecamatan Karawaci Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt pelni",
+      "label": "PT Pelni",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. adhita nikel indonesia",
+      "label": "PT. Adhita Nikel Indonesia",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. alam raya abadi",
+      "label": "PT. Alam Raya Abadi",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. angincourt resources",
+      "label": "PT. Angincourt Resources",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. anindya wiraputra konsult",
+      "label": "PT. Anindya Wiraputra Konsult",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. asuransi jasa indonesia",
+      "label": "PT. Asuransi Jasa Indonesia",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. bara selaras resources",
+      "label": "PT. Bara Selaras Resources",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. borwita citra prima dki",
+      "label": "PT. Borwita Citra Prima DKI",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. borwita citra prima dki kelapa gading",
+      "label": "PT. Borwita Citra Prima DKI Kelapa Gading",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. bursa efek indonesia scbd",
+      "label": "PT. Bursa Efek Indonesia SCBD",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. cemindo gemilang",
+      "label": "PT. Cemindo Gemilang",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. central cipta murdaya",
+      "label": "PT. Central Cipta Murdaya",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. cipta sinar benderang",
+      "label": "PT. Cipta Sinar Benderang",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. darmex oil",
+      "label": "PT. Darmex Oil",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. dian swastatika sentosa",
+      "label": "PT. Dian Swastatika Sentosa",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. gorby putra utama",
+      "label": "PT. Gorby Putra Utama",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. harita group",
+      "label": "PT. Harita Group",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. inacash",
+      "label": "PT. Inacash",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. indolakto",
+      "label": "PT. Indolakto",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. jiexpo kemayoran",
+      "label": "PT. Jiexpo Kemayoran",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. karya citra nusantara",
+      "label": "PT. Karya Citra Nusantara",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. karya teknik utama",
+      "label": "PT. Karya Teknik Utama",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. kiani lestari",
+      "label": "PT. Kiani Lestari",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. kristalin eka lestari",
+      "label": "PT. Kristalin Eka Lestari",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. mattel indonesia",
+      "label": "PT. Mattel Indonesia",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. naked press",
+      "label": "PT. Naked Press",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. natarang mining",
+      "label": "PT. Natarang Mining",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. north sumatera hydro energy",
+      "label": "PT. North Sumatera Hydro Energy",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. pelayaran bahtera adhiguna",
+      "label": "PT. Pelayaran Bahtera Adhiguna",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. perkebunan nusantara",
+      "label": "PT. Perkebunan Nusantara",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. pertamina",
+      "label": "PT. Pertamina",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. pertamina hulu rokan",
+      "label": "PT. Pertamina Hulu Rokan",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. pn group",
+      "label": "PT. Pn Group",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. pn i",
+      "label": "PT. Pn I",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. pramitra mulia langgeng",
+      "label": "PT. Pramitra Mulia Langgeng",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. sarana jaya",
+      "label": "PT. Sarana Jaya",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. sentosa agri prima",
+      "label": "PT. Sentosa Agri Prima",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. serambi timur resources",
+      "label": "PT. Serambi Timur Resources",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. sinar jernih suksesindo",
+      "label": "PT. Sinar Jernih Suksesindo",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. sinarmas",
+      "label": "PT. Sinarmas",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. star energy geotherma",
+      "label": "PT. Star Energy Geotherma",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. subur agro makmur",
+      "label": "PT. Subur Agro Makmur",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. telkom",
+      "label": "PT. Telkom",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. telkomsel smart office",
+      "label": "PT. Telkomsel Smart Office",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pt. valbury ecapital international",
+      "label": "PT. Valbury Ecapital International",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat bank",
+      "label": "Pusat Bank",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat bank artha graha scbd",
+      "label": "Pusat Bank Artha Graha SCBD",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat gdc pay",
+      "label": "Pusat Gdc Pay",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat maybank indonesia",
+      "label": "Pusat Maybank Indonesia",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat pt pln",
+      "label": "Pusat PT PLN",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat pt. pln",
+      "label": "Pusat PT. PLN",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "pusat shoemaker studio",
+      "label": "Pusat Shoemaker Studio",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "s.h. massa melaksanakan unjuk rasa di dinas cipta karya",
+      "label": "S.h. Massa Melaksanakan Unjuk Rasa Di Dinas Cipta Karya",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "samsat",
+      "label": "Samsat",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "silang selatan monas",
+      "label": "Silang Selatan Monas",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "silang selatan monas bsi tower",
+      "label": "Silang Selatan Monas Bsi Tower",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "taman pandang silang monas",
+      "label": "Taman Pandang Silang Monas",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "treasury tower district 8 scbd",
+      "label": "Treasury Tower District 8 SCBD",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "trotoar lampu merah matraman",
+      "label": "Trotoar Lampu Merah Matraman",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "tugu tani menteng",
+      "label": "Tugu Tani Menteng",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "walikota",
+      "label": "Walikota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "walikota adm",
+      "label": "Walikota Adm",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "walikota kota",
+      "label": "Walikota Kota",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    },
+    {
+      "key": "wisma danantara",
+      "label": "Wisma Danantara",
+      "aliases": [],
+      "lat": null,
+      "lon": null,
+      "source": null,
+      "verified_at": null
+    }
+  ]
+}

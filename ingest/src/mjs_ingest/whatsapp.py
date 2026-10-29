@@ -141,6 +141,15 @@ CROWD = re.compile(r"(?:±\s*|kl\.?\s*|sekitar\s*)?([\d][\d.,]*)\s*[Oo]rang")
 PJ_LINE = re.compile(r"^\s*p\.?j\.?\s*\.?\s*(?P<name>.+?)\s*,\s*(?P<crowd>.+?)\s*\.?\s*$", re.IGNORECASE)
 
 # Nomor Indonesia ditulis sebagai +62..., 62..., atau 08... pada data lapangan.
+# Kalimat pembuka dan penutup laporan. Baris semacam ini berdiri sendiri di
+# dalam blok butir dan tanpa penapis akan terbaca sebagai nama pelaksana,
+# melahirkan kegiatan yang tidak pernah dilaporkan siapa pun.
+BOILERPLATE = re.compile(
+    r"^\s*(demikian|terima\s*kasih|trimakasih|mohon\s+izin|ijin\s+melaporkan"
+    r"|izin\s+melaporkan|selamat\s+(pagi|siang|sore|malam)|lapor|sekian)\b",
+    re.IGNORECASE,
+)
+
 PHONE = re.compile(r"(?:\+?62|\b0)[\s\-]?\d[\d\s\-]{7,}\d")
 
 
@@ -383,7 +392,7 @@ def _numbered_actions(
             if line.startswith('"') or demand_parts:
                 demand_parts.append(line)
                 continue
-            if organizer is None:
+            if organizer is None and not BOILERPLATE.match(line):
                 organizer = _clean(line)
 
         action = CivilAction(
@@ -396,9 +405,12 @@ def _numbered_actions(
             organizer=organizer,
             leader=leader,
             crowd_reported=crowd,
-            kind=_kind_at(item_offset, kind_at)
-            if _kind_at(item_offset, kind_at) != "tidak_ditentukan"
-            else (header_kind or "tidak_ditentukan"),
+            kind=_numbered_kind(
+                _kind_at(item_offset, kind_at),
+                header_kind,
+                area=_area_for(item_offset, headings),
+                demand=_clean(" ".join(demand_parts).strip('"')),
+            ),
             demand=_clean(" ".join(demand_parts).strip('"')) or None,
             reported_on=reported_on,
             source_format="bernomor",
@@ -421,6 +433,27 @@ def _numbered_actions(
         if crowd_issue:
             action.issues.append(crowd_issue)
         result.actions.append(action)
+
+
+def _numbered_kind(
+    section: ActivityKind,
+    header_kind: ActivityKind | None,
+    *,
+    area: str | None,
+    demand: str | None,
+) -> ActivityKind:
+    """Tentukan jenis butir bernomor.
+
+    Judul pesan berlaku untuk rekap wilayahnya, bukan untuk setiap baris di
+    dalamnya. Butir yang tidak berada di bawah judul kecamatan dan tidak
+    membawa tuntutan karena itu tidak dinyatakan unjuk rasa walau judul
+    pesan menyebut unras.
+    """
+    if section != "tidak_ditentukan":
+        return section
+    if header_kind == "unjuk_rasa" and not (area or demand):
+        return "tidak_ditentukan"
+    return header_kind or "tidak_ditentukan"
 
 
 def _labeled_kind(

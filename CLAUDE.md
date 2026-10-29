@@ -30,6 +30,14 @@ Rinciannya di `docs/doctrine/sumber-relay.md`.
 
 Jumlah massa pada rekap relay adalah angka yang dilaporkan, bukan skor. Jangan menulis rumus yang mengubahnya menjadi skor pilar Security. Penilaian risiko ditetapkan analis.
 
+## Koordinat
+
+Koordinat tanpa sumber tidak pernah dicatat, termasuk koordinat tempat yang tampak jelas. Koordinat karangan terlihat persis seperti koordinat benar, dan halaman ini dipakai untuk rencana lalu lintas. Isi `data/gazetteer.json` beserta `source`, atau biarkan `null`.
+
+## Jangan menyebut rencana sebagai batal
+
+Pemetaan rencana terhadap kejadian hanya dapat menghitung rencana yang memiliki laporan lapangan. Jangan menamai bidang atau tampilan dengan "realisasi", "terlaksana", atau "batal". Relay melaporkan sebagian kecil kegiatan saja.
+
 ## Nilai yang digandakan
 
 Ambang band dan warna isian ada di dua tempat dan wajib berubah bersamaan:

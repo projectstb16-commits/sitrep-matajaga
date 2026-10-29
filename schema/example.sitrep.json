@@ -1,0 +1,45 @@
+{
+  "edition": {
+    "id": "MJS-2026-01-02-001",
+    "date": "2026-01-02",
+    "sequence": 1,
+    "classification": "PREVIEW_OPEN_REDISTRIBUTION",
+    "tier": "B",
+    "theatre_primary": "JABODETABEK",
+    "methodology": "MSRM v1.1"
+  },
+  "risk": {
+    "composite": 0,
+    "pillars": {
+      "security": 0,
+      "transport": 0,
+      "economy": 0,
+      "cyber": 0,
+      "weather": 0
+    }
+  },
+  "zones": [
+    { "zone": "JAKPUS", "score": 0, "drivers": [] },
+    { "zone": "JAKUT", "score": 0, "drivers": [] },
+    { "zone": "JAKBAR", "score": 0, "drivers": [] },
+    { "zone": "JAKSEL", "score": 0, "drivers": [] },
+    { "zone": "JAKTIM", "score": 0, "drivers": [] },
+    { "zone": "BOGOR", "score": 0, "drivers": [] },
+    { "zone": "DEPOK", "score": 0, "drivers": [] },
+    { "zone": "TANGERANG", "score": 0, "drivers": [] },
+    { "zone": "BEKASI", "score": 0, "drivers": [] }
+  ],
+  "alerts": [],
+  "sections": [
+    {
+      "key": "executive_summary",
+      "title": "Executive Summary",
+      "claims": [
+        { "text": "Data belum tersedia. Contoh ini hanya menunjukkan bentuk data, bukan penilaian risiko.", "tag": "FACT" }
+      ]
+    }
+  ],
+  "recommended_actions": [],
+  "outlook": [],
+  "sources": []
+}

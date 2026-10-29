@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* Token merek MJ-Sentinel. Lihat docs/doctrine/brand-standard.md. */
+  --color-navy: #0b1b3b;
+  --color-gold: #b8860b;
+
+  --color-band-low: #ddefd5;
+  --color-band-moderate: #fbf2cc;
+  --color-band-high: #fadfc5;
+  --color-band-critical: #f7d3d3;
+
+  /* Dokumen terbit memakai Arial. Tumpukan ini menempatkannya lebih dahulu
+     agar tampilan layar tidak menjauh dari dokumen cetak. */
+  --font-sans: Arial, Helvetica, "Liberation Sans", system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: #f5f6f8;
+  color: #16181d;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Tabel terbit memakai header navy; disalin ke layar agar konsisten. */
+th {
+  text-align: left;
+}

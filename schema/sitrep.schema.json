@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://matajaga.id/schema/sitrep-1.0.json",
+  "title": "MJ-Sentinel SITREP",
+  "description": "Kontrak data tunggal antara ingest (Python) dan viewer (TypeScript). Setiap SITREP yang masuk dashboard wajib lolos skema ini.",
+  "type": "object",
+  "required": ["edition", "risk", "zones", "alerts", "sections", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "edition": {
+      "type": "object",
+      "required": ["id", "date", "sequence", "classification", "tier", "methodology"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^MJS-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$",
+          "description": "MJS-YYYY-MM-DD-NNN. NNN zero-pad 3 digit."
+        },
+        "date": { "type": "string", "format": "date" },
+        "sequence": { "type": "integer", "minimum": 1, "maximum": 999 },
+        "classification": {
+          "enum": ["PREVIEW_OPEN_REDISTRIBUTION", "CLIENT_TIER_A"]
+        },
+        "tier": { "enum": ["A", "B"] },
+        "theatre_primary": { "type": "string", "default": "JABODETABEK" },
+        "cutoff": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Batas waktu data. Klaim di luar cut-off tidak boleh masuk."
+        },
+        "methodology": { "const": "MSRM v1.1" }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "required": ["composite", "pillars"],
+      "additionalProperties": false,
+      "properties": {
+        "composite": { "$ref": "#/$defs/score" },
+        "pillars": {
+          "type": "object",
+          "required": ["security", "transport", "economy", "cyber", "weather"],
+          "additionalProperties": false,
+          "properties": {
+            "security": { "$ref": "#/$defs/score" },
+            "transport": { "$ref": "#/$defs/score" },
+            "economy": { "$ref": "#/$defs/score" },
+            "cyber": { "$ref": "#/$defs/score" },
+            "weather": { "$ref": "#/$defs/score" }
+          }
+        }
+      }
+    },
+    "zones": {
+      "type": "array",
+      "description": "Regional risk map Jabodetabek, satu entri per zona administratif.",
+      "items": {
+        "type": "object",
+        "required": ["zone", "score"],
+        "additionalProperties": false,
+        "properties": {
+          "zone": { "type": "string" },
+          "score": { "$ref": "#/$defs/score" },
+          "drivers": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "description": "Critical alerts. Horizon 0-6h adalah kanal prioritas tertinggi.",
+      "items": {
+        "type": "object",
+        "required": ["horizon", "headline", "claim_tag"],
+        "additionalProperties": false,
+        "properties": {
+          "horizon": { "$ref": "#/$defs/horizon" },
+          "headline": { "type": "string", "minLength": 1 },
+          "detail": { "type": "string" },
+          "score": { "$ref": "#/$defs/score" },
+          "claim_tag": { "$ref": "#/$defs/claimTag" },
+          "source_ids": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "20 bagian brief. Urutan dipertahankan apa adanya dari dokumen sumber.",
+      "items": {
+        "type": "object",
+        "required": ["key", "title", "claims"],
+        "additionalProperties": false,
+        "properties": {
+          "key": { "type": "string" },
+          "title": { "type": "string" },
+          "claims": {
+            "type": "array",
+            "description": "Isi bagian dipecah per klaim agar tagging anti-halusinasi dapat diverifikasi otomatis.",
+            "items": { "$ref": "#/$defs/claim" }
+          }
+        }
+      }
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["horizon", "action"],
+        "additionalProperties": false,
+        "properties": {
+          "horizon": { "$ref": "#/$defs/horizon" },
+          "action": { "type": "string", "minLength": 1 },
+          "rationale": { "type": "string" }
+        }
+      }
+    },
+    "outlook": {
+      "type": "array",
+      "description": "Prediksi maksimum H+2. Entri di luar batas itu ditolak validator.",
+      "items": {
+        "type": "object",
+        "required": ["horizon", "claim"],
+        "additionalProperties": false,
+        "properties": {
+          "horizon": { "enum": ["H+1", "H+2"] },
+          "claim": { "$ref": "#/$defs/claim" }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "reliability", "publisher"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "reliability": { "$ref": "#/$defs/reliability" },
+          "publisher": { "type": "string", "minLength": 1 },
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "retrieved_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Skala MSRM v1.1: Low 0-39, Moderate 40-59, High 60-79, Critical 80-100."
+    },
+    "horizon": { "enum": ["0-6h", "0-24h", "0-72h", "0-30d"] },
+    "claimTag": {
+      "enum": ["FACT", "ANALYSIS", "ASSUMPTION"],
+      "description": "Wajib per klaim. Tidak ada default."
+    },
+    "reliability": {
+      "enum": ["A1", "B2", "B3", "C3"],
+      "description": "Source reliability tier sesuai Source Reliability Table."
+    },
+    "claim": {
+      "type": "object",
+      "required": ["text", "tag"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "tag": { "$ref": "#/$defs/claimTag" },
+        "source_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Wajib tidak kosong bila tag FACT."
+        }
+      }
+    }
+  }
+}

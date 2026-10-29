@@ -1,0 +1,32 @@
+# Node
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Produksi SITREP — artefak terbit tidak masuk version control
+data/sitreps/**/*.docx
+data/sitreps/**/*.txt
+!data/sitreps/**/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Berkas tipe yang dihasilkan Next
+next-env.d.ts

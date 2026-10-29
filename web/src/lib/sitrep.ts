@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
-import type { ArchiveIndex, Sitrep } from "@/types/sitrep";
+import type { ArchiveIndex, CivilActionDigest, Sitrep } from "@/types/sitrep";
 
 /**
  * Pembacaan SITREP dari arsip.
@@ -21,7 +21,14 @@ export const ARCHIVE_DIR =
 
 const EXAMPLE = path.join(REPO_ROOT, "schema", "example.sitrep.json");
 
-export class ArchiveEmpty extends Error {}
+/**
+ * Hanya berkas berpola identitas edisi yang dianggap SITREP.
+ *
+ * Folder arsip juga memuat keluaran lain seperti rekap kegiatan sipil dan
+ * indeks. Tanpa pembatas ini, berkas mana pun berekstensi .json akan dibaca
+ * sebagai edisi dan halaman gagal dirender.
+ */
+const EDITION_FILE = /^MJS-\d{4}-\d{2}-\d{2}-\d{3}\.json$/;
 
 /** Daftar edisi yang tersedia, terbaru lebih dahulu. */
 export async function listEditions(): Promise<string[]> {
@@ -32,7 +39,7 @@ export async function listEditions(): Promise<string[]> {
     return [];
   }
   return entries
-    .filter((name) => name.endsWith(".json") && !name.startsWith("."))
+    .filter((name) => EDITION_FILE.test(name))
     .map((name) => name.replace(/\.json$/, ""))
     .sort()
     .reverse();
@@ -64,7 +71,7 @@ export async function readSitrep(editionId: string): Promise<Sitrep> {
  */
 export async function readLatest(): Promise<{ sitrep: Sitrep; isExample: boolean }> {
   const editions = await listEditions();
-  const latest = editions.find((id) => id !== "index");
+  const latest = editions[0];
 
   if (latest) {
     return { sitrep: await readSitrep(latest), isExample: false };
@@ -72,4 +79,17 @@ export async function readLatest(): Promise<{ sitrep: Sitrep; isExample: boolean
 
   const raw = await readFile(EXAMPLE, "utf8");
   return { sitrep: JSON.parse(raw) as Sitrep, isExample: true };
+}
+
+/** Baca rekap kegiatan sipil bila `mjs-ingest whatsapp` sudah dijalankan. */
+export async function readDigest(): Promise<CivilActionDigest | null> {
+  try {
+    const raw = await readFile(
+      path.join(ARCHIVE_DIR, "civil-action-digest.json"),
+      "utf8",
+    );
+    return JSON.parse(raw) as CivilActionDigest;
+  } catch {
+    return null;
+  }
 }

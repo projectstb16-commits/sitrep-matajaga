@@ -36,7 +36,9 @@ export function SectionList({ sections }: { sections: Section[] }) {
                   )}
                   {claim.text}
                   {claim.source_ids && claim.source_ids.length > 0 ? (
-                    <span className="ml-1 text-[#6b7280]">[{claim.source_ids.join(", ")}]</span>
+                    <span className="ml-1 text-[#6b7280]">
+                      [{claim.source_ids.join(", ")}]
+                    </span>
                   ) : null}
                 </li>
               ))}

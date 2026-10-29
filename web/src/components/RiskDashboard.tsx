@@ -3,7 +3,13 @@ import type { PillarKey, Risk } from "@/types/sitrep";
 
 import { BandIndicator } from "./BandIndicator";
 
-const ORDER: PillarKey[] = ["security", "transport", "economy", "cyber", "weather"];
+const ORDER: PillarKey[] = [
+  "security",
+  "transport",
+  "economy",
+  "cyber",
+  "weather",
+];
 
 /**
  * Risk Dashboard.

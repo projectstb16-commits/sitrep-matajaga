@@ -114,3 +114,49 @@ export interface ArchiveIndex {
   next_sequence: number;
   editions: EditionRecord[];
 }
+
+/** Satu kegiatan pada rekap kegiatan sipil. */
+export interface CivilAction {
+  activity_date: string | null;
+  region: string | null;
+  area: string | null;
+  time_start: string | null;
+  time_end: string | null;
+  location: string | null;
+  organizer: string | null;
+  /** Hanya hadir bila penyertaan PII dipilih secara sadar saat ekstraksi. */
+  leader?: string | null;
+  crowd_reported: number | null;
+  kind: "unjuk_rasa" | "giat_masyarakat" | "giat_kepolisian" | "tidak_ditentukan";
+  demand: string | null;
+  reported_on: string;
+  source_format?: "berlabel" | "bernomor";
+  issues?: string[];
+}
+
+export interface KindCount {
+  actions: number;
+  crowd_reported: number;
+}
+
+/**
+ * Rekap kegiatan sipil, keluaran `mjs-ingest whatsapp`.
+ *
+ * Bukan SITREP: tidak memuat skor risiko. Jumlah massa adalah angka yang
+ * dilaporkan relay, bukan penilaian penerbit.
+ */
+export interface CivilActionDigest {
+  generated_from: "whatsapp-export";
+  redacted: boolean;
+  window: { from: string | null; to: string | null };
+  source: { id: string; reliability: Reliability; publisher: string };
+  counts: {
+    actions: number;
+    duplicates_merged: number;
+    skipped_lines: number;
+    without_crowd_figure?: number;
+    by_kind: Record<string, KindCount>;
+  };
+  actions: CivilAction[];
+  skipped?: string[];
+}

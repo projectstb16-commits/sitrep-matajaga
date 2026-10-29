@@ -19,10 +19,12 @@ venv/
 .env.local
 .env.*.local
 
-# Produksi SITREP — artefak terbit tidak masuk version control
-data/sitreps/**/*.docx
-data/sitreps/**/*.txt
-!data/sitreps/**/.gitkeep
+# Arsip dan turunannya tidak masuk version control.
+# Repositori ini publik, sementara rekap rengiat memuat nama penanggung
+# jawab aksi dan nomor telepon pelapor. Pengecualian per jenis berkas
+# terlalu mudah ditembus satu berkas baru; yang diizinkan hanya .gitkeep.
+data/sitreps/*
+!data/sitreps/.gitkeep
 
 # OS
 .DS_Store

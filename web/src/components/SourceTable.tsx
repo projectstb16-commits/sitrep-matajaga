@@ -1,3 +1,5 @@
+import { TableScroll } from "./TableScroll";
+
 import { BRAND } from "@/lib/bands";
 import type { Source } from "@/types/sitrep";
 
@@ -22,41 +24,48 @@ export function SourceTable({ sources }: { sources: Source[] }) {
         Source Reliability Table
       </h2>
 
-      <table className="w-full border-collapse text-sm">
-        <thead>
-          <tr style={{ backgroundColor: BRAND.navy }} className="text-white">
-            <th className="w-16 px-3 py-2 font-bold">ID</th>
-            <th className="w-16 px-3 py-2 font-bold">Tier</th>
-            <th className="px-3 py-2 font-bold">Penerbit</th>
-            <th className="px-3 py-2 font-bold">Judul</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sources.map((source) => (
-            <tr key={source.id} className="border-b border-[#dfe3ea] bg-white">
-              <td className="px-3 py-2 font-bold tabular-nums text-[#16181d]">{source.id}</td>
-              <td className="px-3 py-2 font-bold tabular-nums text-[#16181d]">
-                {source.reliability}
-              </td>
-              <td className="px-3 py-2 text-[#16181d]">{source.publisher}</td>
-              <td className="px-3 py-2 text-[#3d4350]">
-                {source.url ? (
-                  <a
-                    href={source.url}
-                    className="underline decoration-[#B8860B] underline-offset-2"
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    {source.title ?? source.url}
-                  </a>
-                ) : (
-                  (source.title ?? "Data belum tersedia")
-                )}
-              </td>
+      <TableScroll>
+        <table className="w-full min-w-[44rem] border-collapse text-sm">
+          <thead>
+            <tr style={{ backgroundColor: BRAND.navy }} className="text-white">
+              <th className="w-16 px-3 py-2 font-bold">ID</th>
+              <th className="w-16 px-3 py-2 font-bold">Tier</th>
+              <th className="px-3 py-2 font-bold">Penerbit</th>
+              <th className="px-3 py-2 font-bold">Judul</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sources.map((source) => (
+              <tr
+                key={source.id}
+                className="border-b border-[#dfe3ea] bg-white"
+              >
+                <td className="px-3 py-2 font-bold tabular-nums text-[#16181d]">
+                  {source.id}
+                </td>
+                <td className="px-3 py-2 font-bold tabular-nums text-[#16181d]">
+                  {source.reliability}
+                </td>
+                <td className="px-3 py-2 text-[#16181d]">{source.publisher}</td>
+                <td className="px-3 py-2 text-[#3d4350]">
+                  {source.url ? (
+                    <a
+                      href={source.url}
+                      className="underline decoration-[#B8860B] underline-offset-2"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      {source.title ?? source.url}
+                    </a>
+                  ) : (
+                    (source.title ?? "Data belum tersedia")
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </TableScroll>
     </section>
   );
 }

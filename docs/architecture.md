@@ -3,6 +3,14 @@
 ## Pembagian tanggung jawab
 
 ```
+ekspor chat relay (TXT)      arsip terbit (DOCX + TXT)
+        |                            |
+        |  mjs-ingest whatsapp        |
+        v                            v
+  rekap kegiatan sipil          SITREP JSON
+```
+
+```
 arsip terbit (DOCX + TXT)
         |
         |  mjs-ingest parse / index          Python
@@ -43,3 +51,5 @@ Rata-rata berbobot dapat meredam satu pilar ekstrem sampai menyesatkan. Pilar cu
 - Halaman arsip (daftar seluruh edisi) dan halaman per edisi. Saat ini dashboard menampilkan edisi terbaru saja.
 - Peta zona sebagai geografi. Regional risk map masih berupa tabel terurut.
 - Bobot komposit masih provisional; lihat `docs/doctrine/msrm-v1.1.md`.
+- Penggabungan otomatis potongan rekap relay ke dalam SITREP utuh. Saat ini `--fragment-for` mengeluarkan potongan, dan analis yang menempatkannya bersama skor pilar.
+- Rekap relay belum mengenali seluruh ragam penulisan. Sebagian kecil rekaman masih membawa pelaksana yang terbaca dari baris penutup laporan; rekaman seperti itu perlu ditinjau analis sebelum terbit.

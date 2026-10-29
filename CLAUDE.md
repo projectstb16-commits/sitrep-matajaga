@@ -15,6 +15,21 @@ Aturan lengkap ada di `docs/doctrine/`. Yang paling sering dilanggar tanpa senga
 - **Tanpa penyebutan firma intelijen atau konsultan asing** pada produk apa pun. Validator menolaknya.
 - **Skala risiko tetap**: Low 0–39, Moderate 40–59, High 60–79, Critical 80–100.
 
+## Data pribadi
+
+Repositori ini publik. Rekap relay memuat nama penanggung jawab aksi dan nomor telepon pelapor.
+
+- Nomor telepon tidak pernah disimpan, pada bidang mana pun.
+- Nama penanggung jawab disunting secara bawaan; penyertaannya menuntut `--include-pii`.
+- Seluruh isi `data/sitreps/` tidak masuk version control. Jangan melonggarkan `.gitignore` itu per jenis berkas.
+- Jangan menaruh cuplikan data nyata ke dalam tes, contoh, atau dokumentasi. Fixture memakai nilai "Contoh" yang jelas bukan keterangan nyata.
+
+Rinciannya di `docs/doctrine/sumber-relay.md`.
+
+## Jangan menurunkan skor dari data mentah
+
+Jumlah massa pada rekap relay adalah angka yang dilaporkan, bukan skor. Jangan menulis rumus yang mengubahnya menjadi skor pilar Security. Penilaian risiko ditetapkan analis.
+
 ## Nilai yang digandakan
 
 Ambang band dan warna isian ada di dua tempat dan wajib berubah bersamaan:

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://matajaga.id/schema/civil-action-digest-1.0.json",
+  "title": "Rekap Kegiatan Sipil",
+  "description": "Keluaran ekstraksi rekap rengiat dari ekspor chat relay. Bukan SITREP: tidak memuat skor risiko, karena skor ditetapkan analis dan bukan diturunkan dari jumlah massa yang dilaporkan.",
+  "type": "object",
+  "required": ["generated_from", "redacted", "window", "source", "counts", "actions"],
+  "additionalProperties": false,
+  "properties": {
+    "generated_from": { "const": "whatsapp-export" },
+    "redacted": {
+      "type": "boolean",
+      "description": "True bila nama penanggung jawab tidak disertakan. Bawaan untuk seluruh keluaran."
+    },
+    "window": {
+      "type": "object",
+      "required": ["from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": ["string", "null"], "format": "date" },
+        "to": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["id", "reliability", "publisher"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "reliability": {
+          "const": "C3",
+          "description": "Rekap diteruskan grup relay dan asal-usulnya tidak diverifikasi penerbit."
+        },
+        "publisher": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["actions", "duplicates_merged", "skipped_lines", "by_kind"],
+      "additionalProperties": false,
+      "properties": {
+        "actions": { "type": "integer", "minimum": 0 },
+        "duplicates_merged": { "type": "integer", "minimum": 0 },
+        "skipped_lines": { "type": "integer", "minimum": 0 },
+        "without_crowd_figure": { "type": "integer", "minimum": 0 },
+        "by_kind": {
+          "type": "object",
+          "description": "Dipisah per jenis dengan sengaja. Satu total gabungan mencampur massa konser dengan massa aksi.",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["actions", "crowd_reported"],
+            "additionalProperties": false,
+            "properties": {
+              "actions": { "type": "integer", "minimum": 0 },
+              "crowd_reported": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["activity_date", "kind", "reported_on"],
+        "additionalProperties": false,
+        "properties": {
+          "activity_date": { "type": ["string", "null"], "format": "date" },
+          "region": { "type": ["string", "null"] },
+          "area": { "type": ["string", "null"] },
+          "time_start": { "type": ["string", "null"] },
+          "time_end": { "type": ["string", "null"] },
+          "location": { "type": ["string", "null"] },
+          "organizer": { "type": ["string", "null"] },
+          "leader": {
+            "type": ["string", "null"],
+            "description": "Hanya hadir bila penyertaan PII dipilih secara sadar."
+          },
+          "crowd_reported": {
+            "type": ["integer", "null"],
+            "description": "Angka yang dilaporkan relay, bukan hasil penghitungan penerbit."
+          },
+          "kind": {
+            "enum": ["unjuk_rasa", "giat_masyarakat", "giat_kepolisian", "tidak_ditentukan"],
+            "description": "tidak_ditentukan dipakai bila laporan tidak menyebut jenis. Jenis tidak ditebak."
+          },
+          "demand": { "type": ["string", "null"] },
+          "reported_on": { "type": "string", "format": "date" },
+          "source_format": { "enum": ["berlabel", "bernomor"] },
+          "issues": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "skipped": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Baris yang tidak berbentuk rekam kegiatan, beserta alasannya."
+    }
+  }
+}

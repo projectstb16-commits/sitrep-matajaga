@@ -24,8 +24,15 @@ export function BandIndicator({
 
   return (
     <div
-      className={large ? "rounded-sm border-l-4 px-4 py-3" : "rounded-sm border-l-4 px-3 py-2"}
-      style={{ backgroundColor: BAND_FILL[band], borderLeftColor: BAND_INK[band] }}
+      className={
+        large
+          ? "rounded-sm border-l-4 px-4 py-3"
+          : "rounded-sm border-l-4 px-3 py-2"
+      }
+      style={{
+        backgroundColor: BAND_FILL[band],
+        borderLeftColor: BAND_INK[band],
+      }}
     >
       {label ? (
         <div className="text-[11px] font-bold uppercase tracking-wide text-[#3d4350]">
@@ -34,13 +41,21 @@ export function BandIndicator({
       ) : null}
       <div className="flex items-baseline gap-2">
         <span
-          className={large ? "text-4xl font-bold tabular-nums" : "text-xl font-bold tabular-nums"}
+          className={
+            large
+              ? "text-4xl font-bold tabular-nums"
+              : "text-xl font-bold tabular-nums"
+          }
           style={{ color: BAND_INK[band] }}
         >
           {score}
         </span>
         <span
-          className={large ? "text-sm font-bold uppercase" : "text-xs font-bold uppercase"}
+          className={
+            large
+              ? "text-sm font-bold uppercase"
+              : "text-xs font-bold uppercase"
+          }
           style={{ color: BAND_INK[band] }}
         >
           {BAND_LABEL[band]}

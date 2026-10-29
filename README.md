@@ -11,7 +11,7 @@ Repositori ini **menyajikan** SITREP; ia tidak memproduksinya. Produksi brief te
 | `schema/` | `sitrep.schema.json` — kontrak data tunggal antara ingest dan viewer, beserta satu contoh |
 | `ingest/` | Paket Python `mjs_ingest`: pembacaan arsip, ekstraksi DOCX, perhitungan MSRM, validasi doktrin |
 | `web/` | Dashboard Next.js (App Router, TypeScript, Tailwind) |
-| `docs/doctrine/` | Aturan yang mengikat produk: MSRM v1.1, brand standard, klasifikasi, penomoran edisi |
+| `docs/doctrine/` | Aturan yang mengikat produk: MSRM v1.1, brand standard, klasifikasi, penomoran edisi, sumber relay dan data pribadi |
 | `docs/architecture.md` | Pembagian tanggung jawab antara kedua sisi dan alasannya |
 | `data/sitreps/` | Arsip lokal. Berkas terbit tidak masuk version control |
 
@@ -51,6 +51,20 @@ mjs-ingest index "<folder arsip>" -o data/sitreps/index.json
 mjs-ingest parse "<MJS-YYYY-MM-DD-NNN-PREVIEW-EN.docx>"
 ```
 
+Ekstraksi rekap rengiat dari ekspor chat relay menjadi rekap kegiatan sipil:
+
+```bash
+mjs-ingest whatsapp "<ekspor.txt>" --publisher "<nama relay>" -o data/sitreps/civil-action-digest.json
+```
+
+Potongan SITREP untuk satu edisi, berisi alert dan satu bagian isi:
+
+```bash
+mjs-ingest whatsapp "<ekspor.txt>" --fragment-for 2026-10-28
+```
+
+Dashboard menampilkan rekap kegiatan sipil begitu `civil-action-digest.json` ada di folder arsip.
+
 ## Pemeriksaan
 
 ```bash
@@ -66,3 +80,5 @@ cd web && npm run typecheck && npm run lint && npm run build
 Dashboard tidak menghitung ulang skor risiko dan tidak menulis apa pun ke arsip. Satu-satunya tempat komposit ditetapkan adalah `ingest/src/mjs_ingest/msrm.py`. Alasannya ada di `docs/architecture.md`.
 
 Bobot komposit yang terpasang bersifat provisional: doktrin MSRM v1.1 menetapkan skala dan daftar pilar, tetapi tidak menetapkan bobot. Angka yang dipakai dapat dikonfigurasi dan menunggu konfirmasi penerbit.
+
+Rekap relay tidak diubah menjadi skor risiko. Jumlah massa yang tercantum adalah angka yang dilaporkan, dan penilaian pilar tetap pekerjaan analis. Rekap juga memuat data pribadi: nomor telepon tidak pernah disimpan, nama penanggung jawab disunting secara bawaan, dan seluruh isi `data/sitreps/` tidak masuk version control karena repositori ini publik. Dasarnya di `docs/doctrine/sumber-relay.md`.

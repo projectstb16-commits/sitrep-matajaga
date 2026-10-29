@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from . import archive
+from . import archive, whatsapp
 from .parse_docx import DocxSupportMissing, parse
 from .validate import Finding, errors, validate
 
@@ -37,6 +37,30 @@ def main(argv: list[str] | None = None) -> int:
     p_parse = sub.add_parser("parse", help="ekstraksi DOCX terbit menjadi JSON")
     p_parse.add_argument("path", type=Path)
 
+    p_wa = sub.add_parser(
+        "whatsapp",
+        help="ekstraksi rekap rengiat dari ekspor chat relay",
+    )
+    p_wa.add_argument("path", type=Path, help="berkas .txt hasil ekspor chat")
+    p_wa.add_argument(
+        "--publisher",
+        default="Grup relay WhatsApp",
+        help="nama sumber sebagaimana dicatat pada Source Reliability Table",
+    )
+    p_wa.add_argument("-o", "--output", type=Path, help="tulis ke berkas, bawaan stdout")
+    p_wa.add_argument(
+        "--fragment-for",
+        metavar="YYYY-MM-DD",
+        help="keluarkan potongan SITREP (alert, satu bagian isi, satu sumber) "
+        "untuk edisi pada tanggal ini, bukan rekap penuh",
+    )
+    p_wa.add_argument(
+        "--include-pii",
+        action="store_true",
+        help="sertakan nama penanggung jawab. Nama milik orang yang dapat "
+        "diidentifikasi; keluaran tidak boleh masuk repositori publik",
+    )
+
     args = parser.parse_args(argv)
 
     if args.command == "validate":
@@ -45,6 +69,8 @@ def main(argv: list[str] | None = None) -> int:
         return _cmd_index(args.directory, args.output)
     if args.command == "parse":
         return _cmd_parse(args.path)
+    if args.command == "whatsapp":
+        return _cmd_whatsapp(args)
     return 2
 
 
@@ -130,6 +156,53 @@ def _cmd_parse(path: Path) -> int:
         return 2
     json.dump(doc, sys.stdout, indent=2, ensure_ascii=False)
     sys.stdout.write("\n")
+    return 0
+
+
+def _cmd_whatsapp(args: Any) -> int:
+    try:
+        text = args.path.read_text(encoding="utf-8")
+    except OSError as exc:
+        print(f"gagal membaca {args.path}: {exc}", file=sys.stderr)
+        return 2
+
+    extraction = whatsapp.extract(whatsapp.parse_messages(text))
+    if not extraction.actions:
+        print(
+            "tidak ada rekam kegiatan yang terbaca dari berkas ini",
+            file=sys.stderr,
+        )
+
+    if args.fragment_for:
+        payload = whatsapp.sitrep_fragment(
+            extraction,
+            args.fragment_for,
+            publisher=args.publisher,
+            include_pii=args.include_pii,
+        )
+    else:
+        payload = whatsapp.digest(
+            extraction, publisher=args.publisher, include_pii=args.include_pii
+        )
+
+    body = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+    if args.output:
+        args.output.write_text(body, encoding="utf-8")
+        print(f"ditulis ke {args.output}", file=sys.stderr)
+    else:
+        sys.stdout.write(body)
+
+    if args.include_pii:
+        print(
+            "PERINGATAN: keluaran memuat nama penanggung jawab. Jangan "
+            "masukkan berkas ini ke repositori publik atau saluran terbuka.",
+            file=sys.stderr,
+        )
+    print(
+        f"{len(extraction.actions)} rekam terbaca, "
+        f"{len(extraction.skipped)} baris dilewati",
+        file=sys.stderr,
+    )
     return 0
 
 
